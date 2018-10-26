@@ -1,0 +1,74 @@
+{
+  "name": "live-markd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Github Favorite Markdown preview with live rendering",
+  "author": "imcuttle <moyuyc95@gmail.com>",
+  "scripts": {
+    "test": "jest",
+    "client": "webpack-dev-server --config client/webpack.config.js --port 10000 --hot",
+    "prepublishOnly": "npm test",
+    "version": "npm run changelog",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "keywords": [
+    "imcuttle",
+    "live",
+    "markd",
+    "live-markd"
+  ],
+  "typings": "index.d.ts",
+  "license": "MIT",
+  "repository": "imcuttle/live-markd",
+  "jest": {
+    "testMatch": [
+      "**/__test{s,}__/*.(spec|test).{t,j}s{x,}"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@types/jest": "^23.3.7",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "conventional-changelog-cli": "^2.0.5",
+    "css-loader": "^1.0.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "hot-module-require": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.1.2",
+    "jest": "^23.6.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.8.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "github-similar-server": "^1.1.0",
+    "lodash.toarray": "^4.4.0"
+  }
+}

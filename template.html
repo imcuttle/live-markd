@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title><%=title%></title>
+  <link rel="stylesheet" href="//unpkg.com/github-markdown-css">
+  <link rel="stylesheet" href="//unpkg.com/highlight.js/styles/github.css">
+  <style>
+    .markdown-body {
+      max-width: 65%;
+      margin: 40px auto 30px;
+    }
+    @media screen and (max-width: 1200px) {
+      .markdown-body {
+        max-width: 78%;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      .markdown-body {
+        max-width: 90%;
+        margin: 20px auto 10px;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      .markdown-body {
+        max-width: 98%;
+        margin: 20px auto 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="markdown-body">
+  <%=markdownHTML%>
+</div>
+</body>
+</html>
