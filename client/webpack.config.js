@@ -19,9 +19,9 @@ const hotRequire = makeHotRequire(__dirname)
 
 const emitter = new EventEmitter()
 
-function normalizeMiddleware(app, middleware) {
+function normalizeMiddleware(app, path, middleware) {
   middleware = toArray(middleware)
-  app.use(middleware)
+  path ? app.use(path, middleware) : app.use(middleware)
   const stack = app._router.stack
   const handles = stack.slice(stack.length - middleware.length)
   stack.splice(stack.length - middleware.length, middleware.length)
@@ -29,8 +29,8 @@ function normalizeMiddleware(app, middleware) {
   return handles
 }
 
-function setUp(app, middleware, pos) {
-  const handles = normalizeMiddleware(app, middleware)
+function setUp(app, path, middleware, pos) {
+  const handles = normalizeMiddleware(app, path, middleware)
 
   const stack = app._router.stack
   pos = !pos || pos < 0 ? stack.length - 1 : pos
@@ -43,7 +43,7 @@ function unsetMiddleware(app, middleware) {
   let hasBeenUnset = false
   const stack = app._router.stack
 
-  normalizeMiddleware(app, middleware).forEach(m => {
+  normalizeMiddleware(app, null, middleware).forEach(m => {
     const index = stack.findIndex(x => x.handle === m)
     hasBeenUnset = true
 
@@ -79,7 +79,7 @@ function getWebpackConfig({
               markdownTemplateString: curHtml
             }
           })
-          pos = setUp(app, middles, pos)
+          pos = setUp(app, '/docs', middles, pos)
         }
 
         function handleUpdate(oldModule, path) {
