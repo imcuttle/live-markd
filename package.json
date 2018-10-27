@@ -72,7 +72,6 @@
     "github-similar-server": "^1.1.2",
     "lodash.isequalwith": "^4.4.0",
     "lodash.toarray": "^4.4.0",
-    "pify": "^4.0.1",
-    "sseasy": "^2.0.1"
+    "pify": "^4.0.1"
   }
 }

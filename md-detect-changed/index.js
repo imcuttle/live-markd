@@ -44,6 +44,8 @@ function detect(oldMarkdown, newMarkdown, { activeClassName = 'detected-updated'
   let oldAst = noPosGFM.parse(oldMarkdown)
   let newAst = noPosGFM.parse(newMarkdown)
 
+  oldAst.children = oldAst.children.reverse()
+  newAst.children = newAst.children.reverse()
   const state = { updatedNode: null }
   walk(
     oldAst,
@@ -106,6 +108,8 @@ function detect(oldMarkdown, newMarkdown, { activeClassName = 'detected-updated'
     }
   }
 
+  // oldAst.children = oldAst.children.reverse()
+  newAst.children = newAst.children.reverse()
   return gfmRemark.stringify(noPosGFM.runSync(newAst))
 }
 

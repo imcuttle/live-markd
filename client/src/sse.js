@@ -10,7 +10,10 @@ if (typeof EventSource === 'undefined') {
 } else {
   const source = new EventSource(location.pathname + '?sse=on')
   source.addEventListener('message', function(ev) {
-    const data = JSON.parse(ev.data)
+    let data = {}
+    try {
+      data = JSON.parse(ev.data)
+    } catch (e) {}
 
     if (data.type === 'change') {
       document.querySelector('.markdown-body').innerHTML = data.value
