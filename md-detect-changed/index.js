@@ -80,9 +80,9 @@ function detect(oldMarkdown, newMarkdown, { activeClassName = 'detected-updated'
       }
 
       // Check eq
-      const refWithoutChildren = Object.assign({}, ref, { children: null })
-      const nodeWithoutChildren = Object.assign({}, node, { children: null })
-      if (!isFoundInNew || (isFoundInNew && !isEqWith(nodeWithoutChildren, refWithoutChildren))) {
+      const stripedRef = Object.assign({}, ref, { children: null, position: null })
+      const stripedNode = Object.assign({}, node, { children: null, position: null })
+      if (!isFoundInNew || (isFoundInNew && !isEqWith(stripedRef, stripedNode))) {
         state.updatedNode = ref
         state.parents = newParents
         state.paths = paths

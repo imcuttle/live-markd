@@ -5,6 +5,4 @@
  *
  */
 
-if (typeof EventSource !== 'undefined') {
-  console.error(`Maybe you are run`)
-}
+require('./sse')
