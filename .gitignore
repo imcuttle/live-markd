@@ -2,7 +2,7 @@
 .DS_Store
 node_modules/
 !dist/template.html
-dist/
+dist/__live_markd__
 
 public/
 **/*debug.log
