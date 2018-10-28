@@ -1,8 +1,9 @@
 .idea/
 .DS_Store
 node_modules/
-!/dist/template.html
-/dist/__live_markd__
+
+dist/
+!dist/template.html
 public/
 **/*debug.log
 coverage/
