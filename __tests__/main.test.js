@@ -265,6 +265,7 @@ Array [
         contentMap.clear()
         // for test only
         watch = jest.spyOn(middleware.factory, 'watch')
+        watch.mockClear()
       })
       it('should watch file works!', function(done) {
         jest.useRealTimers()
