@@ -14,7 +14,6 @@ cache:
 #install:
 # - npm install
 
-? before_script
 script:
   - npm test -- --coverage
 after_script:
