@@ -20,7 +20,6 @@ if (typeof EventSource === 'undefined') {
       const nodeList = [...document.querySelectorAll('.markdown-body .detected-updated')]
       const node = nodeList.pop()
       if (node) {
-        console.log(node)
         node.scrollIntoView({ behavior: 'smooth' })
       }
     }

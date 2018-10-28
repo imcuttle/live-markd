@@ -8,3 +8,4 @@ coverage/
 .entry
 .dist
 .vscode
+!/dist/template.html

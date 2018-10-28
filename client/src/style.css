@@ -1,0 +1,34 @@
+.markdown-body {
+  max-width: 65%;
+  margin: 40px auto 30px;
+}
+@media screen and (max-width: 1200px) {
+  .markdown-body {
+    max-width: 78%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .markdown-body {
+    max-width: 90%;
+    margin: 20px auto 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .markdown-body {
+    max-width: 98%;
+    margin: 20px auto 10px;
+  }
+}
+
+@keyframes bling {
+  from {
+    background-color: #d9edf7;
+  }
+  to {
+    background-color: #d9edf7;
+  }
+}
+.markdown-body .detected-updated {
+  animation: bling 2.5s 1;
+}

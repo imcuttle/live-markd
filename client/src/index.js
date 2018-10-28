@@ -4,5 +4,5 @@
  * @date 2018/10/26
  *
  */
-
+require('./style.css')
 require('./sse')

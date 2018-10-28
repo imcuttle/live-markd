@@ -14,51 +14,36 @@ const FriendlyErrors = require('friendly-errors-webpack-plugin')
 const EventEmitter = require('events')
 const fs = require('fs')
 const makeHotRequire = require('hot-module-require')
-const toArray = require('lodash.toarray')
+
+const { namespace, distPath } = require('../config')
+const { setUp, unsetMiddleware } = require('../lib/express-utils')
+
 const hotRequire = makeHotRequire(__dirname)
 
 const emitter = new EventEmitter()
 
-function normalizeMiddleware(app, path, middleware) {
-  middleware = toArray(middleware)
-  path ? app.use(path, middleware) : app.use(middleware)
-  const stack = app._router.stack
-  const handles = stack.slice(stack.length - middleware.length)
-  stack.splice(stack.length - middleware.length, middleware.length)
-
-  return handles
-}
-
-function setUp(app, path, middleware, pos) {
-  const handles = normalizeMiddleware(app, path, middleware)
-
-  const stack = app._router.stack
-  pos = !pos || pos < 0 ? stack.length - 1 : pos
-  stack.splice.apply(stack, [pos, 0].concat(handles))
-
-  return pos
-}
-
-function unsetMiddleware(app, middleware) {
-  let hasBeenUnset = false
-  const stack = app._router.stack
-
-  normalizeMiddleware(app, null, middleware).forEach(m => {
-    const index = stack.findIndex(x => x.handle === m)
-    hasBeenUnset = true
-
-    if (index >= 0) {
-      app._router.stack.splice(index, 1)
+const postcssLoader = {
+  loader: 'postcss-loader',
+  options: {
+    ident: 'postcss',
+    plugins(/*loader*/) {
+      return [
+        require('autoprefixer')({ remove: false }),
+        require('cssnano')({
+          zindex: false,
+          // https://github.com/ben-eb/cssnano/issues/361
+          reduceIdents: false
+        })
+      ]
     }
-  })
-  hasBeenUnset && console.log('Unset middleware!')
+  }
 }
 
 function getWebpackConfig({
   htmlTemplatePath = nps.join(__dirname, '../template.html'),
   entry = nps.join(__dirname, './src/index.js'),
   debug,
-  dist = nps.join(__dirname, '../dist'),
+  dist = distPath,
   sourceMap,
   prod = true,
   compilationSuccessInfo,
@@ -66,15 +51,18 @@ function getWebpackConfig({
   port = 10000
 } = {}) {
   const mode = prod ? 'production' : 'development'
+  console.log('mode', mode)
+
   return {
     devServer: {
+      noInfo: true,
       port,
       after: function(app) {
         let pos
         let middles
         let curHtml
         function register() {
-          middles = require('../middleware')(nps.join(__dirname, '../__tests__/fixture'), {
+          middles = require('../index')(nps.join(__dirname, '../example/docs'), {
             gssOptions: {
               markdownTemplateString: curHtml
             }
@@ -92,8 +80,8 @@ function getWebpackConfig({
           curHtml = html.source()
           register()
 
-          hotRequire.refuse(['../middleware'], handleUpdate)
-          hotRequire.accept(['../middleware'], handleUpdate)
+          hotRequire.refuse(['../index'], handleUpdate)
+          hotRequire.accept(['../index'], handleUpdate)
         })
       }
     },
@@ -101,7 +89,11 @@ function getWebpackConfig({
     context,
     mode,
     devtool: !prod || sourceMap ? 'source-map' : false,
-    output: { path: dist, chunkFilename: 'assets/[name].js', filename: 'assets/[name].js', publicPath: '/' },
+    output: {
+      path: dist,
+      chunkFilename: `${namespace}/[name].js`,
+      filename: `${namespace}/[name].js`
+    },
     optimization: {
       splitChunks: {
         chunks: 'all',
@@ -120,7 +112,7 @@ function getWebpackConfig({
       }),
       new MiniCssExtractPlugin({
         // disable: !prod,
-        filename: 'assets/style.css',
+        filename: `${namespace}/style.css`,
         allChunks: true
       }),
       new HtmlWebpackPlugin({
@@ -134,20 +126,32 @@ function getWebpackConfig({
       {
         apply(compiler) {
           compiler.hooks.compilation.tap('MyPlugin', compilation => {
-            // v4
             if (HtmlWebpackPlugin && HtmlWebpackPlugin.getHooks) {
-              HtmlWebpackPlugin.getHooks(compilation).afterEmit.tapAsync(
-                'MyPlugin', // <-- Set a meaningful name here for stacktraces
-                afterEmit
-              )
+              // v4
+              HtmlWebpackPlugin.getHooks(compilation).afterEmit.tapAsync('MyPlugin', afterEmit)
+              prod && HtmlWebpackPlugin.getHooks(compilation).alterAssetTags.tap('MyPlugin', alterAssetTags)
             } else {
               // v3
               compilation.hooks.htmlWebpackPluginAfterEmit.tapAsync('MyPlugin', afterEmit)
+              prod && compilation.hooks.htmlWebpackPluginAlterAssetTags.tap('MyPlugin', alterAssetTags)
             }
 
             function afterEmit(data, cb) {
               emitter.emit('html-plugin-after', data.html)
               cb(null, data)
+            }
+            function alterAssetTags(pluginArgs) {
+              // V3
+              function overwrite(tag) {
+                if (tag.attributes.href) {
+                  tag.attributes.href = '<%=baseUrl%>' + tag.attributes.href.replace(/^\/+/, '')
+                }
+                if (tag.attributes.src) {
+                  tag.attributes.src = '<%=baseUrl%>' + tag.attributes.src.replace(/^\/+/, '')
+                }
+              }
+              pluginArgs.head && pluginArgs.head.forEach(overwrite)
+              pluginArgs.body && pluginArgs.body.forEach(overwrite)
             }
           })
         }
@@ -186,7 +190,8 @@ function getWebpackConfig({
                 minimize: true,
                 sourceMap: true
               }
-            }
+            },
+            postcssLoader
           ]
         }
       ]
