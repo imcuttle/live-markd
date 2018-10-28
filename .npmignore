@@ -1,4 +1,10 @@
-example/docs
+example/
 client/
-template.html
+/template.html
 __tests__/
+.idea/
+.DS_Store
+**/*debug.log
+.travis.yml
+.prettierrc.js
+**/__tests__
