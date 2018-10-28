@@ -1,6 +1,7 @@
 .idea/
 .DS_Store
 node_modules/
+!dist/template.html
 dist/
 public/
 **/*debug.log
@@ -8,4 +9,4 @@ coverage/
 .entry
 .dist
 .vscode
-!/dist/template.html
+
