@@ -58,7 +58,7 @@ live-markd <path>
 
 ## API
 
-### `liveMarkd(root [, options])``
+### `liveMarkd(root [, options])`
 
 #### `root`
 
