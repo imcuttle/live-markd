@@ -1,9 +1,9 @@
 .idea/
 .DS_Store
 node_modules/
-
-dist/
 !dist/template.html
+dist/
+
 public/
 **/*debug.log
 coverage/
