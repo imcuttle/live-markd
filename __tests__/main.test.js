@@ -10,17 +10,17 @@ const fs = require('fs')
 const liveMarkd = require('../')
 const { fixture } = require('./helper')
 
-describe('liveMarkd', function() {
+describe('liveMarkd EventSource', function() {
   let middleware, app
-  function setupServer(path, opts) {
+  function setupServer(path, opts, root = fixture()) {
     app = express()
-    middleware = liveMarkd(fixture(), opts)
+    middleware = liveMarkd(root, opts)
     path ? app.use(path, middleware) : app.use(middleware)
   }
-  function request(path) {
+  function request(path, buffer = false) {
     var req = supertest(app)
       .get(path)
-      .buffer(false)
+      .buffer(buffer)
     var end = req.end
     req.sseEnd = function(callback) {
       req.on('error', callback).on('response', function(res) {
