@@ -1,5 +1,6 @@
 # ss
-> cz adaptor for baidu BEFE
+
+> cz adaptor for baidu BEFExs
 
 在项目根 `package.json` 中配置
 

@@ -1,7 +1,8 @@
 # ss
-> cz adaptor for baidu BEFE
 
-在项目根 `package.json` 中配置
+> cz adaptor for baidu BEFExs
+
+在项目根 `package.json` 中配置 new
 
 ```text
 ...
