@@ -2,7 +2,7 @@
   "name": "live-markd",
   "version": "1.0.0",
   "main": "index.js",
-  "description": "Github Favorite Markdown preview with live rendering",
+  "description": "📝Github Favorite Markdown(gfm) preview with live rendering & location and highlight changed block.",
   "author": "imcuttle <moyuyc95@gmail.com>",
   "bin": "./bin.js",
   "scripts": {
