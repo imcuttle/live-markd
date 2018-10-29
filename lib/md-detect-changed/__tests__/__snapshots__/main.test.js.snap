@@ -5,7 +5,7 @@ exports[`md-detect-changed should diff-code 1`] = `
 <blockquote>
 <p>cz adaptor for baidu BEFExs</p>
 </blockquote>
-<p class=\\"detected-updated\\">在项目根 <code>package.json</code> 中配置new</p>
+<p class=\\"detected-updated\\">在项目根 <code>package.json</code> 中配置 new</p>
 <pre><code class=\\"hljs language-text\\">...
   <span class=\\"hljs-string\\">\\"config\\"</span>: {
     <span class=\\"hljs-string\\">\\"commitizen\\"</span>: {
