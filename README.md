@@ -77,7 +77,7 @@ live-markd <path>
 
 #### `root`
 
-The markdown files' root folder.
+The markdown files' root folder or exact file.
 
 - Type: `string`
 
