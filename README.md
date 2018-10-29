@@ -7,7 +7,7 @@
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://prettier.io/)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square)](https://conventionalcommits.org)
 
-github favorite markdown preview with live rendering
+> Github favorite markdown([gfm](https://github.github.com/gfm/)) preview with live rendering
 
 ![](https://i.loli.net/2018/10/28/5bd58a95c6b7d.gif)
 
@@ -107,6 +107,76 @@ The path of markdown's template, It's useful for customizing your suitable markd
 
 - Type: `string`
 - Default: [`./dist/template.html`](./dist/template.html)
+
+## How it works?
+
+### Data Flow
+
+```text
+Fs Watcher -> Event Stream -> Client
+                   |
+   markdown diff   |   heartbeat & data
+                   |
+      [ Server ]   |   [ Browser ]
+```
+
+### Markdown Diff
+
+I use [remark](https://github.com/remarkjs/remark) for treating markdown text as markdown abstract syntax tree(MDAST),
+then new MDAST comparing with old one.
+
+For example
+
+- `old.md`
+
+```
+# hi
+world
+```
+
+- `new.md`
+
+```
+# hi
+world!
+```
+
+- [MDAST](https://github.com/syntax-tree/mdast) of `old.md`
+
+```javascript
+{
+  type: 'root',
+  children: [
+    {
+      type: 'heading',
+      depth: 1,
+      children: [{
+        type: 'paragraph',
+        children: [{ type: 'text', value: 'world' }]
+      }]
+    }
+  ]
+}
+```
+
+- [MDAST](https://github.com/syntax-tree/mdast) of `new.md`
+
+```javascript
+{
+  type: 'root',
+  children: [
+    {
+      type: 'heading',
+      depth: 1,
+      children: [{
+        type: 'paragraph',
+        // This node is different with `old.md`
+        children: [{ type: 'text', value: 'world!' }]
+      }]
+    }
+  ]
+}
+```
 
 ## Related
 
