@@ -11,6 +11,8 @@
 
 ![](https://i.loli.net/2018/10/28/5bd58a95c6b7d.gif)
 
+## Table of Contents
+
 <!-- toc -->
 
 - [Installation](#installation)
