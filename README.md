@@ -11,6 +11,19 @@
 
 ![](https://i.loli.net/2018/10/28/5bd58a95c6b7d.gif)
 
+<!-- toc -->
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [API](#api)
+- [How it works?](#how-it-works)
+- [Related](#related)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [License](#license)
+
+<!-- tocstop -->
+
 ## Installation
 
 ```bash
