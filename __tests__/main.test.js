@@ -267,6 +267,9 @@ Array [
         watch = jest.spyOn(middleware.factory, 'watch')
         watch.mockClear()
       })
+      afterAll(() => {
+        jest.useFakeTimers()
+      })
       it('should watch file works!', function(done) {
         jest.useRealTimers()
         // lazy initialize
