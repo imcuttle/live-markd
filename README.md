@@ -196,6 +196,7 @@ world!
 ## Related
 
 - [github-similar-server](https://github.com/imcuttle/github-similar-server) - A github similar static server with a markdown renderer.
+- [detect-one-changed](https://github.com/imcuttle/detect-one-changed) - Detect first changed html and markdown between old text and new one.
 
 ## Contributing
 
