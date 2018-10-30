@@ -1,3 +1,7 @@
+<a name="1.2.0"></a>
+
+# [1.2.0](https://github.com/imcuttle/live-markd/compare/v1.1.2...v1.2.0) (2018-10-30)
+
 <a name="1.1.2"></a>
 
 ## [1.1.2](https://github.com/imcuttle/live-markd/compare/v1.1.1...v1.1.2) (2018-10-29)
