@@ -7,7 +7,12 @@
 const express = require('express')
 const middleware = require('./lib/middleware')
 
-function liveMarkd(root, { port, baseUrl = '', ...opts } = {}) {
+function liveMarkd(root, opts) {
+  const { port, baseUrl = '' } = opts
+  opts = Object.assign({}, opts)
+  delete opts.port
+  delete opts.baseUrl
+
   const middle = middleware(root, opts)
   if (port) {
     const app = express()
