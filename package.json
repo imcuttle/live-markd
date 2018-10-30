@@ -78,11 +78,10 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "@moyuyc/walk-tree": "^1.0.2",
     "chokidar": "^2.0.4",
+    "detect-one-changed": "^1.0.0",
     "express": "^4.16.4",
     "github-similar-server": "^1.2.0",
-    "lodash.isequalwith": "^4.4.0",
     "minimist": "^1.2.0",
     "pify": "^4.0.1"
   }

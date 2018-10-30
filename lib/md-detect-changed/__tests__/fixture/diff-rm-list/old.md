@@ -1,4 +1,0 @@
-# readme
-
-- fooo
-- fooo removed
