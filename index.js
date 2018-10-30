@@ -8,7 +8,7 @@ const express = require('express')
 const middleware = require('./lib/middleware')
 
 function liveMarkd(root, opts) {
-  const { port, baseUrl = '' } = opts
+  const { port, baseUrl = '' } = opts || {}
   opts = Object.assign({}, opts)
   delete opts.port
   delete opts.baseUrl
