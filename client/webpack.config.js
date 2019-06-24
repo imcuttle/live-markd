@@ -16,7 +16,7 @@ const fs = require('fs')
 const makeHotRequire = require('hot-module-require')
 
 const { namespace, distPath } = require('../config')
-const { setUp, unsetMiddleware } = require('../lib/express-utils')
+const { runSeq } = require('../lib/express-utils')
 
 const hotRequire = makeHotRequire(__dirname)
 
@@ -58,30 +58,20 @@ function getWebpackConfig({
       noInfo: true,
       port,
       after: function(app) {
-        let pos
-        let middles
         let curHtml
-        function register() {
-          middles = require('../index')(nps.join(__dirname, '../example/docs'), {
+        const middlesGetter = hotRequire('..')
+        app.use('/', function() {
+          const middles = middlesGetter()(nps.join(__dirname, '../example/docs'), {
             gssOptions: {
               markdownTemplateString: curHtml
             }
           })
-          pos = setUp(app, '/docs', middles, pos)
-        }
 
-        function handleUpdate(oldModule, path) {
-          console.log('Detect updating middleware!')
-          unsetMiddleware(app, middles)
-          register()
-        }
+          return runSeq(middles).apply(this, arguments)
+        })
 
         emitter.on('html-plugin-after', html => {
           curHtml = html.source()
-          register()
-
-          hotRequire.refuse(['../index'], handleUpdate)
-          hotRequire.accept(['../index'], handleUpdate)
         })
       }
     },
