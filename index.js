@@ -29,3 +29,5 @@ function liveMarkd(root, opts) {
 }
 
 module.exports = liveMarkd
+
+console.log('liveMarkd')

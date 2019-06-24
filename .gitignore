@@ -11,3 +11,4 @@ coverage/
 .dist
 .vscode
 
+/component.json

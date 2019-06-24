@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JavaScript-modules-diagram</ID>
+  <OriginalElement>/Users/yucong02/self/live-markd/index.js;/Users/yucong02/self/live-markd/lib;</OriginalElement>
+  <nodes>
+    <node x="533.0" y="71.0">/Users/yucong02/self/live-markd/config.js</node>
+    <node x="659.0" y="70.0">/Users/yucong02/self/live-markd/lib/createEventStream.js</node>
+    <node x="567.0" y="461.0">/Users/yucong02/self/live-markd/lib/express-utils.js#toArray#101;</node>
+    <node x="166.0" y="591.0">/Users/yucong02/self/live-markd/node_modules/detect-one-changed/index.d.ts</node>
+    <node x="162.0" y="104.0">/Users/yucong02/self/live-markd/node_modules/express/index.js</node>
+    <node x="362.0" y="0.0">/Users/yucong02/self/live-markd/node_modules/github-similar-server/index.js</node>
+    <node x="419.0" y="463.0">/Users/yucong02/self/live-markd/node_modules/pify/index.js</node>
+    <node x="222.0" y="393.0">/Users/yucong02/self/live-markd/lib/md-detect-changed/index.js#index.d.ts#181;/Users/yucong02/self/live-markd/lib/md-detect-changed/index.js#markhtml.js#108;</node>
+    <node x="667.0" y="213.0">/Users/yucong02/self/live-markd/lib/reproduce-fswatch/index.js#chokidar#94;</node>
+    <node x="855.0" y="283.0">/Users/yucong02/self/live-markd/node_modules/chokidar/index.js</node>
+    <node x="308.0" y="193.0">/Users/yucong02/self/live-markd/index.js#express#93;/Users/yucong02/self/live-markd/index.js#middleware#128;</node>
+    <node x="0.0" y="324.0">/Users/yucong02/self/live-markd/node_modules/github-similar-server/src/markhtml.js</node>
+    <node x="469.0" y="246.0">/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;</node>
+    <node x="647.0" y="388.0">/Users/yucong02/self/live-markd/lib/to-array.js</node>
+    <node x="397.0" y="309.0">fs</node>
+    <node x="367.0" y="123.0">path</node>
+    <node x="450.0" y="135.0">url</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="/Users/yucong02/self/live-markd/index.js#express#93;/Users/yucong02/self/live-markd/index.js#middleware#128;" target="/Users/yucong02/self/live-markd/node_modules/express/index.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="/Users/yucong02/self/live-markd/lib/express-utils.js#toArray#101;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/reproduce-fswatch/index.js#chokidar#94;" target="/Users/yucong02/self/live-markd/node_modules/chokidar/index.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="fs">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/index.js#express#93;/Users/yucong02/self/live-markd/index.js#middleware#128;" target="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/md-detect-changed/index.js#index.d.ts#181;/Users/yucong02/self/live-markd/lib/md-detect-changed/index.js#markhtml.js#108;" target="/Users/yucong02/self/live-markd/node_modules/detect-one-changed/index.d.ts">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="url">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="/Users/yucong02/self/live-markd/lib/md-detect-changed/index.js#index.d.ts#181;/Users/yucong02/self/live-markd/lib/md-detect-changed/index.js#markhtml.js#108;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/md-detect-changed/index.js#index.d.ts#181;/Users/yucong02/self/live-markd/lib/md-detect-changed/index.js#markhtml.js#108;" target="/Users/yucong02/self/live-markd/node_modules/github-similar-server/src/markhtml.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/express-utils.js#toArray#101;" target="/Users/yucong02/self/live-markd/lib/to-array.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="/Users/yucong02/self/live-markd/lib/createEventStream.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="/Users/yucong02/self/live-markd/lib/to-array.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="path">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="/Users/yucong02/self/live-markd/node_modules/pify/index.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="/Users/yucong02/self/live-markd/node_modules/github-similar-server/index.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="/Users/yucong02/self/live-markd/lib/reproduce-fswatch/index.js#chokidar#94;">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="/Users/yucong02/self/live-markd/lib/middleware.js#config.js#336;/Users/yucong02/self/live-markd/lib/middleware.js#createEventStream#469;/Users/yucong02/self/live-markd/lib/middleware.js#detectChange#417;/Users/yucong02/self/live-markd/lib/middleware.js#express-utils.js#539;/Users/yucong02/self/live-markd/lib/middleware.js#fs#172;/Users/yucong02/self/live-markd/lib/middleware.js#fsWatch#364;/Users/yucong02/self/live-markd/lib/middleware.js#gss#197;/Users/yucong02/self/live-markd/lib/middleware.js#nps#111;/Users/yucong02/self/live-markd/lib/middleware.js#pify#280;/Users/yucong02/self/live-markd/lib/middleware.js#toArray#242;/Users/yucong02/self/live-markd/lib/middleware.js#url#151;" target="/Users/yucong02/self/live-markd/config.js">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9092122830440588" x="485.0" y="355.0" />
+  <SelectedNodes>
+    <node>/Users/yucong02/self/live-markd/index.js#express#93;/Users/yucong02/self/live-markd/index.js#middleware#128;</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>All</Category>
+  </Categories>
+  <VISIBILITY>Overview</VISIBILITY>
+</Diagram>
+
