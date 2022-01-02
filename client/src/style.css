@@ -2,6 +2,10 @@
   max-width: 65%;
   margin: 40px auto 30px;
 }
+
+.markdown-body img {
+  max-width: 100%;
+}
 @media screen and (max-width: 1200px) {
   .markdown-body {
     max-width: 78%;
