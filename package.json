@@ -1,6 +1,6 @@
 {
   "name": "live-markd",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "index.js",
   "description": "📝Github Favorite Markdown(gfm) preview with live rendering & location and highlight changed block.",
   "author": "imcuttle <moyuyc95@gmail.com>",
