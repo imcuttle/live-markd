@@ -6,6 +6,7 @@
   "author": "imcuttle <moyuyc95@gmail.com>",
   "bin": "./bin.js",
   "scripts": {
+    "postpublish": "git push --tag origin $(git rev-parse --abbrev-ref HEAD)",
     "test": "jest --forceExit",
     "dev": "webpack-dev-server --config client/webpack.config.js --port 10000 --hot",
     "build": "rimraf dist && NODE_ENV=production webpack -p --config client/webpack.config.js",
