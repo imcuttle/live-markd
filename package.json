@@ -78,7 +78,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "chokidar": "^2.0.4",
+    "chokidar": "^3.5.2",
     "detect-one-changed": "^1.0.0",
     "express": "^4.16.4",
     "github-similar-server": "^1.2.0",
